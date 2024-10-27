@@ -1,0 +1,48 @@
+Resources:
+  c1bucketunicoquepidioelprofedeinfra2024:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub c1bucketunicoquepidioelprofedeinfra2024
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+  c1bucketunicoquepidioelprofedeinfra2024Policy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: c1bucketunicoquepidioelprofedeinfra2024
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt c1bucketunicoquepidioelprofedeinfra2024.Arn
+              - !Sub ${c1bucketunicoquepidioelprofedeinfra2024.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+  Instancia1:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-06b21ccaeff8cd686
+      InstanceType: t2.micro
+      InstanceInitiatedShutdownBehavior: stop
+      KeyName: clase4
+      Monitoring: false
+  Instancia2:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1b
+      ImageId: ami-06b21ccaeff8cd686
+      InstanceType: t2.micro
+      KeyName: clase4
+      InstanceInitiatedShutdownBehavior: stop
+      Monitoring: false
