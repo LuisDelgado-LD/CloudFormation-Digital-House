@@ -4,12 +4,12 @@ En este Repositorio iré dejando diferentes ejercicios que me solicitan por los 
 
 ## Estructura
 ``` 
-|-- \<Nombre tecnología o herramienta>
-    |-- \<Número clase|Número de ejercicio>
+|-- <Nombre tecnología o herramienta>
+    |-- <Número clase|Número de ejercicio>
         |-- README.md
         |-- Archivo1
         |-- Carpeta1
-        |-- \<variantes>
+        |-- <variantes>
         |   |-- README.md
         |   |-- Archivo1
         |   |-- Carpeta1
@@ -37,7 +37,7 @@ Su solución
 
 ```
 
-### \<variantes>
+### <variantes>
 En esta carpeta pondré ejercicios similares que se me hayan ocurrido usando el ejercicio real como base, la estructura del archivo README será el mismo.
 
 
