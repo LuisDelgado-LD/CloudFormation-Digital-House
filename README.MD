@@ -3,7 +3,7 @@
 En este Repositorio iré dejando diferentes ejercicios que me solicitan por los cursos en los que me encuentro
 
 ## Estructura
-
+``` 
 |-- \<Nombre tecnología o herramienta>
     |-- \<Número clase|Número de ejercicio>
         |-- README.md
@@ -13,7 +13,7 @@ En este Repositorio iré dejando diferentes ejercicios que me solicitan por los 
         |   |-- README.md
         |   |-- Archivo1
         |   |-- Carpeta1
-
+```
 ### README.md
 En este archivo se colocarán datos sobre el ejercicio solicitado, la información recibida, el detalle de los archivos usados y la ejecución.
 Tendrá el siguiente formato
